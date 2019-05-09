@@ -1,0 +1,20 @@
+pcm.dmixer {
+  type dmix
+  ipc_key 2048
+  slave {
+    pcm "hw:1,9" # Always use pure hw. dmix will reformat/resample audio.
+    period_size 512 # If you get stuttering/or non-working audio, fiddle around with these
+    buffer_size 4096
+    rate 48000 # HDMI, I'll assume 48kHz
+    format S16_LE # Should be default for pretty much any soundcard.
+  }
+  bindings {
+    0 0
+    1 1
+  }
+}
+
+pcm.!default {
+  type plug
+  slave.pcm dmixer
+}
