@@ -12,6 +12,7 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'vim-airline/vim-airline'
 Plugin 'mcchrish/nnn.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'xuhdev/vim-latex-live-preview'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,6 +52,7 @@ let g:airline_theme = "gruvbox"
 
 let g:nnn#layout = { 'left': '~20%' }
 let g:nnn#command = 'nnn -l'
+let g:livepreview_previewer = 'llpp'
 
 autocmd vimenter * NERDTree
 autocmd VimEnter * wincmd p
@@ -63,6 +65,7 @@ syntax on
 set tabstop=2
 set autoindent
 set expandtab
+set shiftwidth=2
 set softtabstop=2
 set cursorline
 colorscheme gruvbox
